@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Shooter Ezaa</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script>
+        var layoutSize = { 'W' : 768, 'h' : 1024};
+        var X_POSITION = {
+            LEFT: 0,
+            CENTER: layoutSize.W / 2,
+            RIGHT: layoutSize.W,
+        };
+
+        var Y_POSITION = {
+            TOP: 0,
+            CENTER: layoutSize.h / 2,
+            BOTTOM: layoutSize.h,
+        };
+
+        var currentHero = 0;
+        var countHero = 2;
+    </script>
+    <script src="sceneMenu.js"></script>
+    <script src="scene.PilihHero.js"></script>
+    <script src="scenePlay.js"></script>
+    <script src="sceneGameOver.js"></script>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 768,
+            height: 1024,
+            scene: [SceneMenu, ScenePilihHero, ScenePlay, SceneGameOver],
+            scale: {
+            autoCenter: Phaser.Scale.CENTER_BOTH,
+            }
+        };
+        const game = new Phaser.Game(config);
+    </script>
+</body>
+</html>
